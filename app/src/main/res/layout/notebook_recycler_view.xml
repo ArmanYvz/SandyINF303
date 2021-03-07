@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/notebookConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkBlue"
+    android:scaleX="1"
+    tools:context=".Controller.NotebookActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/notebookEditorViewConstraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
+
+        <ScrollView
+            android:id="@+id/notebookEditorScrollViewLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_alignParentTop="true"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.github.irshulx.Editor
+                android:id="@+id/notebookEditorView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingTop="20dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="150dp"
+                app:render_type="Renderer">
+
+            </com.github.irshulx.Editor>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listOfNotesOfNotebook"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/darkBlue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/notebookEditorViewConstraintLayout">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="@color/orange"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/buttonBackFromNotebookRecyclerView"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="8dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/arrow_blazing_sir_left" />
+
+    <TextView
+        android:id="@+id/textviewNotebookViewNotebookTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="13dp"
+        android:paddingLeft="4dp"
+        android:paddingTop="16dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar2"
+        app:layout_constraintStart_toEndOf="@+id/buttonBackFromNotebookRecyclerView" />
+
+    <ImageView
+        android:id="@+id/imageViewTitleEditButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar2"
+        app:layout_constraintStart_toEndOf="@+id/buttonBackFromNotebookRecyclerView"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/pen" />
+
+    <Spinner
+        android:id="@+id/spinnerSetNotebookViewType"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="8dp"
+        android:entries="@array/spinnerItems"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/textviewNotebookViewNotebookTitle" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddNewNoteToNotebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/listOfNotesOfNotebook"
+        app:layout_constraintEnd_toEndOf="@+id/listOfNotesOfNotebook"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

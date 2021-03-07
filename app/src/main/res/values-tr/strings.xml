@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Sandy Personal Assistant</string>
+    <string name="note_editor_title_hint_text">Başlığı yazın…</string>
+    <string name="editor_text_hint">Buraya yazın…</string>
+    <string name="notebook_list_view_text">Liste Görünümü</string>
+    <string name="notebook_notebook_view_text">Defter Görünümü</string>
+    <string name="notebook_main_text">Defterler</string>
+    <string name="notebook_add_new_button">Yeni Defter</string>
+    <string name="cancel_button">İptal</string>
+    <string name="attach_button">Ekle</string>
+    <string name="save_button">Kaydet</string>
+    <string name="create_button">Oluştur</string>
+    <string name="title_text">Başlık:</string>
+    <string name="new_notebook_text">Yeni Defter</string>
+    <string name="new_title_text">Yeni Başlık:</string>
+    <string name="open_editor_button">Editörü Aç</string>
+    <string name="choose_date_button">Tarih Seç</string>
+    <string name="choose_time_button">Saat Seç</string>
+    <string name="date_text">Tarih</string>
+    <string name="time_text">Saat</string>
+
+    <!--Toast-->
+    <string name="calendar_sync_no_app">Bu telefonda takvim senkronizasyonunu çalıştırmak için uygun bir uygulama yüklü değil</string>
+    <string name="calendar_event_deleted">Silinen notun bildirimine eklenen takvim etkinliği de başarıyla silindi</string>
+    <string name="calendar_event_insert_success">Etkinlik takvime başarıyla eklendi</string>
+    <string name="calendar_event_updated">Düzenlenen notun takvim etkinliği de güncellendi</string>
+    <string name="calendar_no_permission_error">Takvim senkronizasyon işlemi için izin verilmedi</string>
+    <string name="notebook_title_char_limit_error">Defter başlığı maksimum 10 karakter içerebilir</string>
+    <string name="notebook_delete_error">Defter silinemedi</string>
+    <string name="notebook_open_fail_error">Seçilen defter açılamadı</string>
+    <string name="note_delete_error">Not silinemedi</string>
+    <string name="note_not_found_error">Seçilen not bulunamadı</string>
+    <string name="note_no_notification">Nota eklenen bildirim yok</string>
+    <string name="operation_failed">Operasyon başarısız</string>
+    <string name="notification_delete_error">Bildirim silinemedi</string>
+    <string name="notification_open_error">Bildirim açılamadı</string>
+    <string name="notification_past_time_error">Bildirim için geçmiş bir zaman seçemezsiniz</string>
+    <string name="no_calendar_alert">Cihazda takvim bulunamadı.</string>
+    <string name="cancel">İptal Edildi</string>
+    <string name="minute_text">Dakika</string>
+    <string name="hour_text">Saat</string>
+    <string name="language_text">Bir Dil Seçin</string>
+    <string name="language_en">English</string>
+    <string name="language_tr">Türkçe</string>
+
+
+</resources>

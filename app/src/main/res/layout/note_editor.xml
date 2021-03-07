@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/noteEditorActivityConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/darkBlue">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+
+            <include
+                layout="@layout/toolbar_editor"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize" />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:background="@color/white">
+
+
+            <!-- Begin Editor toolbar -->
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_noteeditor_options_calendar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignBottom="@+id/fab_noteeditor_options"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toStartOf="@+id/fab_noteeditor_options_addimage"
+                app:fabCustomSize="48dp"
+                android:clickable="true"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/calender_type_2" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_noteeditor_options_addimage"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignBottom="@+id/fab_noteeditor_options"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toStartOf="@+id/fab_noteeditor_options_timer"
+                app:fabCustomSize="48dp"
+                android:clickable="true"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/image_cadr" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_noteeditor_options_timer"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignBottom="@+id/fab_noteeditor_options"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toStartOf="@+id/fab_noteeditor_options"
+                app:fabCustomSize="48dp"
+                android:clickable="true"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/circle_clock" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_noteeditor_options"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignBottom="@id/tools"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="50dp"
+                android:clickable="true"
+                android:textAlignment="center"
+                android:visibility="visible"
+                app:fabSize="auto"
+                app:srcCompat="@drawable/plus" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="-27dp"
+                android:layout_marginBottom="40dp"
+                android:scrollbars="vertical">
+
+                <com.github.irshulx.Editor
+                    android:id="@+id/editor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="140dp"
+                    android:clickable="true"
+                    app:placeholder="Type here..."
+                    app:render_type="Editor">
+
+                </com.github.irshulx.Editor>
+            </ScrollView>
+
+            <HorizontalScrollView
+                android:id="@+id/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="#e6e6e6"
+                android:scrollbars="none">
+
+                <include
+                    layout="@layout/editor_toolbar_linearlayout_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+
+            </HorizontalScrollView>
+
+            <!--End of Editor toolbar -->
+
+
+        </RelativeLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <ImageView
+        android:id="@+id/imageView_back"
+        android:layout_width="46dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_close_white_48dp" />
+
+    <ImageView
+        android:id="@+id/imageView_save_note"
+        android:layout_width="40dp"
+        android:layout_height="41dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/tick" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

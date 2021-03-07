@@ -2,17 +2,158 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainActivityConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/darkBlue"
+    android:scaleX="1"
+    tools:context=".Controller.MainActivity">
 
-    <TextView
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/mainActivityNavigationView"
+        android:layout_width="220dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/darkOrange"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="0dp"
+                android:layout_height="71dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/orange"
+                android:gravity="center"
+                android:text="@string/notebook_main_text"
+                android:textSize="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <Button
+                android:id="@+id/buttonAddNotebook"
+                android:layout_width="215dp"
+                android:layout_height="88dp"
+                android:layout_marginTop="1dp"
+                android:backgroundTint="@color/orange"
+                android:text="@string/notebook_add_new_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonAddNotebook" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mainActivityListOfNotebooks"
+                android:layout_width="216dp"
+                android:layout_height="480dp"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="8dp"
+                android:background="@color/darkBlue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listOfNotes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="@color/darkBlue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_create_new_note"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello Sandy!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="@+id/listOfNotes"
+        app:layout_constraintEnd_toEndOf="@+id/listOfNotes"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="413dp"
+        android:layout_height="74dp"
+        android:background="@color/orange"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/showNotification"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@id/listOfNotes"
+        app:layout_constraintStart_toEndOf="@id/buttonMainActivityNavigationDrawer"
+        app:srcCompat="@drawable/ic_baseline_access_alarm_24" />
+
+    <ImageButton
+        android:id="@+id/buttonMainActivityNavigationDrawer"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@id/listOfNotes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/burger_menu" />
+
+    <ImageButton
+        android:id="@+id/button_change_language"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/listOfNotes"
+        app:layout_constraintEnd_toEndOf="@+id/mainActivityConstraintLayout"
+        app:srcCompat="@drawable/adjust_type_2" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

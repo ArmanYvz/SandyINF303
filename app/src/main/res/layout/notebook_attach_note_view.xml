@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/notesToAttachConstraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alpha="1"
+    android:background="@color/darkBlue"
+    android:textAlignment="gravity"
+    android:visibility="visible">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listOfNotesToAttach"
+        android:layout_width="364dp"
+        android:layout_height="461dp"
+        android:layout_marginTop="53dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonAttachSelectedNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="544dp"
+
+        android:layout_marginEnd="69dp"
+        android:layout_marginBottom="67dp"
+        android:backgroundTint="@color/orange"
+        android:text="@string/attach_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/buttonCancelAttach"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonCancelAttach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="544dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginBottom="67dp"
+        android:backgroundTint="@color/orange"
+        android:text="@string/cancel_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAttachSelectedNotes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
